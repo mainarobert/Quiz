@@ -21,4 +21,15 @@ form.addEventListener('submit', e => {
     scrollTo(0,0); // Method stored in window object, the global object in frontend js. window.scrollTo, window.console.log()...no need to refer to it because its infered to
     result.querySelector('span').textContent = `${score} %`;
     result.classList.remove('d-none');
+
+    // animate score
+    let i = 0;
+    const timer = setInterval(() => {
+        result.querySelector('span').textContent = `${i} %`;
+        if (i === score) {
+            clearInterval(timer);
+        }else{
+            i++;
+        }
+    }, 20)
 });
