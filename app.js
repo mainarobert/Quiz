@@ -17,6 +17,8 @@ form.addEventListener('submit', e => {
     });
 
     // display score on page
+    // scrollTo scrolls to top of the page when user submits form
+    scrollTo(0,0); // Method stored in window object, the global object in frontend js. window.scrollTo, window.console.log()...no need to refer to it because its infered to
     result.querySelector('span').textContent = `${score} %`;
-    result.classList.remove('d-none')
+    result.classList.remove('d-none');
 });
